@@ -10,7 +10,7 @@ def calculate_amigo_pi(K, tau, theta):
 def calculate_amigo_pid(K, tau, theta):
     """Calculate Kc, tau_I, and tau_D for a PID controller using AMIGO tuning rules."""
     Kc = (1 / K) * (0.2 + 0.45 * (tau / theta))
-    tau_I = (0.40 * theta + 0.8 * tau) / (theta + 0.1 * tau)
+    tau_I = theta*(0.40 * theta + 0.8 * tau) / (theta + 0.1 * tau)
     tau_D = 0.5*theta*tau / (0.3*theta + tau)
     return Kc, tau_I, tau_D
 
