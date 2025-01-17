@@ -4,7 +4,7 @@ import pandas as pd
 def calculate_amigo_pi(K, tau, theta):
     """Calculate Kc and tau_I for a PI controller using AMIGO tuning rules."""
     Kc = (0.15 / K) + ((0.35 - (theta * tau) / ((theta + tau) ** 2)) * (tau / (K * theta)))
-    tau_I = 0.35 * theta + (130 * tau**2) / (tau**2 + 120 * tau * theta + 70 * theta**2)
+    tau_I = 0.35 * theta + (13 * theta * tau**2) / (tau**2 + 12 * theta * tau + 7 * theta**2)
     return Kc, tau_I
 
 def calculate_amigo_pid(K, tau, theta):
